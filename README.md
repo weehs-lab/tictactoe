@@ -10,7 +10,7 @@ Clone the repository to local computer:
 git clone https://github.com/weehs-lab/tictactoe.git
 ```
 
-You can compile the code in any operating systems, but for Linux systems (for example, Debian):
+You can compile the code in any operating systems, but for Linux systems (for example, Debian), you can use g++:
 
 ```bash
 cd tictactoe
