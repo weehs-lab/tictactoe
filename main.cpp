@@ -10,6 +10,7 @@ int main ()
     bool player = true;
     int x = 0, y = 0;
     char status = 'P';
+	cout << "\x1b[H\x1b[2J";
     board -> DrawBoard ();
     while (true)
     {
@@ -24,6 +25,7 @@ int main ()
 					continue;
 				}
 				board -> SetPosition (x, y, player);
+				cout << "\x1b[H\x1b[2J";
             }
 			else
 			{
@@ -44,6 +46,7 @@ int main ()
 					continue;
 				}
 				board -> SetPosition (x, y, player);
+				cout << "\x1b[H\x1b[2J";
             }
 			else
 			{
