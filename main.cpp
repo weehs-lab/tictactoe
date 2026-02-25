@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 #include "tictactoe.h"
@@ -15,24 +16,42 @@ int main ()
         if (player == true)
         {
             cout << "Player X position (x y): ";
-            cin >> x >> y;
-            if (board -> GetBoard (x, y) != ' ')
+            if (cin >> x >> y)
             {
-                cerr << "Place is taken, please try again:\n";
-                continue;
+                if (board -> GetBoard (x, y) != ' ')
+				{
+					cerr << "Place is taken, please try again:\n";
+					continue;
+				}
+				board -> SetPosition (x, y, player);
             }
-            board -> SetPosition (x, y, player);
+			else
+			{
+				cerr << "Invalid input, please try again:\n";
+				cin.clear ();
+				cin.ignore (numeric_limits<streamsize>::max (), '\n');
+				continue;
+			}
         }
         else
         {
             cout << "Player O position (x y): ";
-            cin >> x >> y;
-            if (board -> GetBoard (x, y) != ' ')
+            if (cin >> x >> y)
             {
-                cerr << "Place is taken, please try again:\n";
-                continue;
+				if (board -> GetBoard (x, y) != ' ')
+				{
+					cerr << "Place is taken, please try again:\n";
+					continue;
+				}
+				board -> SetPosition (x, y, player);
             }
-            board -> SetPosition (x, y, player);
+			else
+			{
+				cerr << "Invalid input, please try again:\n";
+				cin.clear ();
+				cin.ignore (numeric_limits<streamsize>::max (), '\n');
+				continue;
+			}
         }
         player = !player;
         board -> DrawBoard ();
