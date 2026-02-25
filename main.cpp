@@ -25,7 +25,7 @@ int main ()
 					continue;
 				}
 				board -> SetPosition (x, y, player);
-				cout << "\x1b[H\x1b[2J";
+				cout << "\x1b[H\x1b[J";
             }
 			else
 			{
@@ -46,7 +46,7 @@ int main ()
 					continue;
 				}
 				board -> SetPosition (x, y, player);
-				cout << "\x1b[H\x1b[2J";
+				cout << "\x1b[H\x1b[J";
             }
 			else
 			{
